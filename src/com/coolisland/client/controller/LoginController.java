@@ -38,47 +38,7 @@ public class LoginController {
 	/**
 	 * Initializes the login
 	 */
-	private void initialize() {
+	public void initialize() {
 		LoginView.getInstance().initialize();
 	}
-
-	/**
-	 * display server response
-	 */
-	private void displayServerResponse(String result) {
-		// don't display the success message
-		return;
-
-		// dialogBox.setText("Remote Procedure Call");
-		// serverResponseLabel.removeStyleName("serverResponseLabelError");
-		// serverResponseLabel.setHTML(result);
-		// dialogBox.center();
-		// closeButton.setFocus(true);
-
-		// // Add a handler to close the DialogBox
-		// closeButton.addClickHandler(new ClickHandler() {
-		// /**
-		// * Handles the close button click from the RPC pop-up
-		// */
-		// public void onClick(ClickEvent event) {
-		// dialogBox.hide();
-		// sendButton.setEnabled(true);
-		// sendButton.setFocus(true);
-		// }
-		// });
-		//
-		// // We can set the id of a widget by accessing its Element
-		// closeButton.getElement().setId("closeButton");
-		// VerticalPanel dialogVPanel = new VerticalPanel();
-		// dialogVPanel.addStyleName("dialogVPanel");
-		// dialogVPanel.add(new
-		// HTML("<b>Sending name to the server:</b>"));
-		// dialogVPanel.add(textToServerLabel);
-		// dialogVPanel.add(new HTML("<br><b>Server replies:</b>"));
-		// dialogVPanel.add(serverResponseLabel);
-		// dialogVPanel.setHorizontalAlignment(VerticalPanel.ALIGN_RIGHT);
-		// dialogVPanel.add(closeButton);
-		// dialogBox.setWidget(dialogVPanel);
-	}
-
 }

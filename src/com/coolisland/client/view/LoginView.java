@@ -21,6 +21,13 @@ import com.google.gwt.user.client.ui.TextBox;
 
 public class LoginView implements ClickHandler, KeyUpHandler {
 	/**
+	 * The message displayed to the user when the server cannot be reached or
+	 * returns an error.
+	 */
+	private static final String	       SERVER_ERROR	       = "An error occurred while "
+	                                                               + "attempting to contact the server. Please check your network "
+	                                                               + "connection and try again.";
+	/**
 	 * Create a remote service proxy to talk to the server-side Greeting
 	 * service.
 	 */
@@ -37,7 +44,7 @@ public class LoginView implements ClickHandler, KeyUpHandler {
 	private final boolean	           initialized	       = false;
 
 	private LoginView() {
-		Log.debug(logDebugIndentation + "Constructor LoginView() starting");
+		Log.debug(logDebugIndentation + "Constructor LoginView()");
 
 		initialize();
 
@@ -125,6 +132,45 @@ public class LoginView implements ClickHandler, KeyUpHandler {
 		if (event.getNativeKeyCode() == KeyCodes.KEY_ENTER) {
 			sendNameToServer();
 		}
+	}
+
+	/**
+	 * display server response
+	 */
+	private void displayServerResponse(String result) {
+		// don't display the success message
+		return;
+
+		// dialogBox.setText("Remote Procedure Call");
+		// serverResponseLabel.removeStyleName("serverResponseLabelError");
+		// serverResponseLabel.setHTML(result);
+		// dialogBox.center();
+		// closeButton.setFocus(true);
+
+		// // Add a handler to close the DialogBox
+		// closeButton.addClickHandler(new ClickHandler() {
+		// /**
+		// * Handles the close button click from the RPC pop-up
+		// */
+		// public void onClick(ClickEvent event) {
+		// dialogBox.hide();
+		// sendButton.setEnabled(true);
+		// sendButton.setFocus(true);
+		// }
+		// });
+		//
+		// // We can set the id of a widget by accessing its Element
+		// closeButton.getElement().setId("closeButton");
+		// VerticalPanel dialogVPanel = new VerticalPanel();
+		// dialogVPanel.addStyleName("dialogVPanel");
+		// dialogVPanel.add(new
+		// HTML("<b>Sending name to the server:</b>"));
+		// dialogVPanel.add(textToServerLabel);
+		// dialogVPanel.add(new HTML("<br><b>Server replies:</b>"));
+		// dialogVPanel.add(serverResponseLabel);
+		// dialogVPanel.setHorizontalAlignment(VerticalPanel.ALIGN_RIGHT);
+		// dialogVPanel.add(closeButton);
+		// dialogBox.setWidget(dialogVPanel);
 	}
 
 	/**
